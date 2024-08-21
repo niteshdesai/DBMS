@@ -1,0 +1,12 @@
+1:SELECT * FROM `p` WHERE p_city='london';
+
+
+2:SELECT SELECT pname,weight FROM p WHERE weight=(SELECT MAX(weight) FROM p);
+
+
+3:SELECT pno,pname FROM p WHERE color='red';
+
+
+4:SELECT DISTINCT sname,s_city FROM s,sp WHERE s.sno=sp.sno AND qty>200;
+
+5:SELECT max(weight) FROM p WHERE weight<(SELECT MAX(weight) FROM p);

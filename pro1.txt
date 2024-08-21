@@ -1,0 +1,25 @@
+P table:
+
+CREATE TABLE `mca2024nitesh`.`p` (`pno` CHAR(3) NOT NULL , `pname` VARCHAR(20) NOT NULL , `color` VARCHAR(10) NOT NULL , `weight` FLOAT NOT NULL , `p_city` VARCHAR(25) NOT NULL , PRIMARY KEY (`pno`)) ENGINE = InnoDB;
+
+
+INSERT INTO `p` (`pno`, `pname`, `color`, `weight`, `p_city`) VALUES ('p1', 'nut', 'red', '12', 'london'), ('p2', 'bolt', 'green', '17', 'paris'), ('p3', 'screw', 'blue', '17', 'oslo'), ('p4', 'screw', 'red', '14', 'london'), ('p5', 'cam', 'blue', '12', 'paris'), ('p6', 'cg', 'red', '19', 'london');
+
+
+S table:
+
+CREATE TABLE `mca2024nitesh`.`s` (`sno` CHAR(3) NOT NULL , `sname` VARCHAR(50) NOT NULL , `s_status` INT NOT NULL , `s_city` VARCHAR(25) NOT NULL , PRIMARY KEY (`sno`)) ENGINE = InnoDB;
+
+INSERT INTO `s` (`sno`, `sname`, `s_status`, `s_city`) VALUES ('s1', 'smith', '20', 'london'), ('s2', 'jones', '10', 'paris'), ('s3', 'black', '10', 'paris'), ('s4', 'clark', '20', 'london'), ('s5', 'adams', '30', 'athens');
+
+
+
+SP table:
+
+CREATE TABLE `mca2024nitesh`.`sp` (`s1` INT NOT NULL , `p1` INT NOT NULL , `qty` INT NOT NULL , PRIMARY KEY (`s1`, `p1`)) ENGINE = InnoDB;
+
+ALTER TABLE sp ADD FOREIGN KEY(s1) REFERENCES s(s1);
+
+ALTER TABLE sp ADD FOREIGN KEY(p1) REFERENCES p(p1);
+
+INSERT INTO `sp` (`sno`, `pno`, `qty`) VALUES ('s1', 'p1', '300'), ('s1', 'p2', '200'), ('s1', 'p3', '400'), ('s1', 'p4', '200'), ('s1', 'p5', '100'), ('s1', 'p6', '100'), ('s2', 'p2', '300'), ('s2', 'p1', '400'), ('s3', 'p2', '200'), ('s4', 'p2', '200'), ('s4', 'p4', '300'), ('s4', 'p5', '400')

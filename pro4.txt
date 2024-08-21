@@ -1,0 +1,5 @@
+11:SELECT p.pname,SUM(sp.qty) AS total FROM sp,p WHERE p.pno=sp.pno GROUP by sp.pno;
+
+12:SELECT s.sno,s.sname,SUM(sp.qty) AS TotalQty FROM sp,s WHERE s.sno=sp.sno AND s.sno<'s4' GROUP BY sno;
+
+13:SELECT s.sno,s.sname,SUM(sp.qty) AS TotalQty FROM sp,s WHERE s.sno=sp.sno AND s.s_status=20 GROUP BY sno;

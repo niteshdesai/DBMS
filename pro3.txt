@@ -1,0 +1,12 @@
+6:SELECT sp.sno,sp.qty FROM sp,p WHERE  p.pno=sp.pno AND p.weight=(SELECT p.weight FROM `p` ORDER BY  weight DESC LIMIT 1);
+  & SELECT sp.sno,sp.qty FROM sp,p WHERE p.pno=sp.pno AND p.weight=(SELECT max(p.weight) FROM `p`);
+
+7:SELECT s.sname,sp.qty FROM sp,p,s WHERE s.sno=sp.sno AND p.pno=sp.pno AND p.color="red";
+
+
+8:SELECT s.sname,p.p_city,sp.qty FROM sp,p,s WHERE s.sno=sp.sno AND p.pno=sp.pno AND s.s_status<30;
+
+9:SELECT sno,SUM(qty)As total FROM sp GROUP by sno;
+
+
+10:SELECT pno,SUM(qty) AS total FROM sp GROUP by pno;

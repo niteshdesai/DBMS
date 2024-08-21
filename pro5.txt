@@ -1,0 +1,14 @@
+Dept Table::
+
+CREATE TABLE `mca2024nitesh`.`dept` (`dept_id` INT NOT NULL , `dept_name` VARCHAR(30) NOT NULL , `dept_location` VARCHAR(50) NOT NULL , PRIMARY KEY (`dept_id`)) ENGINE = InnoDB;
+
+Insert data: INSERT INTO `dept` (`dept_id`, `dept_name`, `dept_location`) VALUES ('1', 'computer', 'Ahmedabad'), ('2', 'microBiology', 'sadara'), 
+ ('3', 'management', 'randheja'), ('4', 'main Office', 'Ahmedabad');
+
+
+Emp table::
+
+CREATE TABLE `mca2024nitesh`.`emp` (`emp_id` INT NOT NULL , `emp_name` VARCHAR(35) NOT NULL , `emp_dept_id` INT NOT NULL , `emp_boss_id` INT NOT NULL , `emp_salary` BIGINT NOT NULL , PRIMARY KEY (`emp_id`)) ENGINE = InnoDB;
+
+
+FOREIGN KEY:  ALTER TABLE `emp` ADD FOREIGN KEY (`emp_dept_id`) REFERENCES `dept`(`dept_id`) ON DELETE RESTRICT ON UPDATE RESTRICT;
