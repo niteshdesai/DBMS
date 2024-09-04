@@ -1,0 +1,6 @@
+1:SELECT emp.emp_name,dept.dept_name,boss.emp_name,dept.dept_name FROM emp,emp AS boss,dept WHERE emp.emp_dept_id=dept.dept_id AND emp.emp_boss_id=boss.emp_id;
+
+ SELECT emp.emp_name,dept.dept_name,boss.emp_name,dept.dept_name FROM emp,emp AS boss,dept,dept AS bossdept WHERE emp.emp_boss_id=boss.emp_id AND emp.emp_dept_id=dept.dept_id AND           boss.emp_dept_id=bossdept.dept_id;
+
+2:SELECT emp.emp_name,dept.dept_name,boss.emp_name,dept.dept_name FROM emp,emp AS boss,dept,dept AS bossdept WHERE emp.emp_boss_id=boss.emp_id AND emp.emp_dept_id=dept.dept_id AND     boss.emp_dept_id=bossdept.dept_id AND emp.emp_salary>boss.emp_salary;
+
